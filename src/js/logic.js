@@ -28,6 +28,8 @@ function InitArray(){
     console.log(templateValue);
 }
 
+InitArray();
+
 function SetTemplate(index,value){
     templateValue[index]=value;
     console.log(templateValue)
@@ -98,3 +100,24 @@ $("#btn_reload").click(function(e){
     e.preventDefault();
     Refresh();
 })
+
+$("#btn_generate").click(function(e){
+    e.preventDefault();
+    Generator();
+})
+
+function CleanResult(){
+    $("#result").text("");
+}
+
+function MakeUpNote(value){
+    let temp=document.createElement('a');
+    temp.className="Note";
+    temp.innerText=value;
+    return temp;
+}
+
+function AddNode(value){
+    $("#result")[0].appendChild(MakeUpNote(value))
+}
+CleanResult();

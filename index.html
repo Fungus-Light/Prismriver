@@ -6,7 +6,10 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./materialize/css/materialize.css">
     <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="./alertifyjs/css/themes/default.min.css">
     <script src="nexus_UI/NexusUI.js"></script>
+    <script src="./alertifyjs/alertify.min.js"></script>
 </head>
 
 <body>
@@ -129,7 +132,7 @@
                         <label>操作</label>
                         <br>
                         <br>
-                        <a class="waves-effect waves-light blue btn">生成</a>
+                        <a id="btn_generate" class="waves-effect waves-light blue btn">生成</a>
                         <a class="waves-effect waves-light pink btn">播放</a>
                         <a id="btn_reload" class="waves-effect waves-light red btn">重置</a>
                         <a class="waves-effect waves-light green btn">导出</a>
@@ -146,6 +149,7 @@
     <script src="materialize/js/materialize.js"></script>
     <script src="materialize/jquery/jquery.js"></script>
     <script> M.AutoInit();</script>
+    <script src="src/js/Generator.js"></script>
     <script src="src/js/logic.js"></script>
 </body>
 

@@ -4,25 +4,32 @@
     <meta charset="UTF-8">
     <title>Prismriver-音乐灵感生成器</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="materialize/css/materialize.css">
-    <link rel="stylesheet" href="materialize/iconfont/material-icons.css">
+    <link rel="stylesheet" href="./materialize/css/materialize.css">
+    <link rel="stylesheet" href="./materialize/iconfont/material-icons.css">
+    <link rel="stylesheet" href="./src/css/index.css">
     <script src="nexus_UI/NexusUI.js"></script>
 </head>
 
 <body>
-
-    <nav>
-        <div class="nav-wrapper indigo darken-3">
-            <a href="#" class="brand-logo center">Prismriver</a>
-            <ul id="nav-mobile" class="right">
-                <li><a href="#!">帮助</a></li>
-                <li><a href="collapsible.html">源代码</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="navbar-fixed">
+        <ul id="mod-select" class="dropdown-content">
+            <li><a href="#!">旋律生成</a></li>
+            <!-- <li><a href="#!" class="diabled">施工中...</a></li> -->
+          </ul>
+        <nav>
+            <div class="nav-wrapper indigo darken-3">
+                <a href="#" class="brand-logo center">Prismriver</a>
+                <ul id="nav-mobile" class="right">
+                    <li><a class="dropdown-trigger" href="#!" data-target="mod-select">功能选择<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="#!">帮助</a></li>
+                    <li><a href="https://github.com/Fungus-Light/Prismriver">源代码</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <main style="width: 95%;margin: auto;">
-        <div class="row">
+        <div id="rythm-gen" class="row">
             <br>
 
             <div class="col s4">
@@ -31,30 +38,27 @@
 
                     <br>
                     <div class="input-field col s6">
-                        <select>
-                            <option value="" disabled selected>选择小节数</option>
+                        <select id="section_num">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="4">4</option>
                         </select>
-                        <label>小节</label>
+                        <label>小节数</label>
                     </div>
                     <div class="input-field col s6">
-                        <select>
-                            <option value="" disabled selected>选择单位时长</option>
+                        <select id="unit_time">
                             <option value="4">四分音符</option>
                             <option value="8">八分音符</option>
                         </select>
-                        <label>基本单位</label>
+                        <label>单位时长</label>
                     </div>
                     <label>BPM</label>
                     <p class="range-field">
-                        <input type="range" id="tempo" min="1" max="200" />
+                        <input id="tempo_num" type="range" id="tempo" min="50" max="200" value="128" />
                     </p>
 
                     <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>选择音阶</option>
+                        <select id="scale_type">
                             <option value="1">五声音阶</option>
                             <option value="2">大调音阶</option>
                             <option value="3">小调音阶</option>
@@ -63,17 +67,15 @@
                     </div>
 
                     <div class="input-field col s12">
-                        <select>
-                            <option value="" disabled selected>选择跨越几个八度</option>
+                        <select id="range">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4">4</option>
                         </select>
-                        <label>跨度</label>
+                        <label>跨度（几个八度）</label>
                     </div>
 
-                    <div class="input-field col s12">
+                    <!-- <div class="input-field col s12">
                         <select>
                             <option value="" disabled selected>选择跨越组数</option>
                             <option value="1">1</option>
@@ -81,7 +83,7 @@
                             <option value="3">3</option>
                         </select>
                         <label>跨度</label>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -96,10 +98,50 @@
                         <div id="template"></div>
                     </div>
 
+                    <div class="col s12">
+                        <br>
+                        <label>结果</label>
+                        <br>
+                        <div id="result">
+                            <a class="Note">C</a>
+                            <a class="Note">D</a>
+                            <a class="Note">-</a>
+                            <a class="Note">C#</a>
+                            <a class="Note">G</a>
+                            <a class="Note">A</a>
+                            <a class="Note">C</a>
+                            <a class="Note">D</a>
+                            <a class="Note">-</a>
+                            <a class="Note">C</a>
+                            <a class="Note">G</a>
+                            <a class="Note">A</a>
+                            <a class="Note">C</a>
+                            <a class="Note">D</a>
+                            <a class="Note">-</a>
+                            <a class="Note">C</a>
+                            <a class="Note">G</a>
+                            <a class="Note">A</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col s12">
+                        <br>
+                        <label>操作</label>
+                        <br>
+                        <br>
+                        <a class="waves-effect waves-light blue btn">生成</a>
+                        <a class="waves-effect waves-light pink btn">播放</a>
+                        <a class="waves-effect waves-light red btn">重置</a>
+                        <a class="waves-effect waves-light green btn">导出</a>
+                    </div>
+
                 </div>
 
             </div>
         </div>
+
+
     </main>
 
     <script src="materialize/js/materialize.js"></script>

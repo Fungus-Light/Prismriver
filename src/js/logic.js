@@ -17,6 +17,10 @@ beatTemplate.on('change',function(e){
     SetTemplate(e.column,e.state);
 })
 
+function Refresh(){
+    window.location.reload();
+}
+
 function InitArray(){
     for(let i=0;i<templateValue.length;i++){
         templateValue[i]=false;
@@ -90,5 +94,7 @@ $("#range").change(function(e){
     console.log(range);
 })
 
-
-
+$("#btn_reload").click(function(e){
+    e.preventDefault();
+    Refresh();
+})

@@ -1,4 +1,5 @@
 .Note{
+    display: inline-block;
     font-size: 2rem;
     font-weight: bold;
     margin: 5px;

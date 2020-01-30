@@ -2,7 +2,7 @@ let templateValue=new Array(4);
 let section_num=1;
 let unit_time=4;
 let tempo=128;
-let scale_type=1;
+let scale_type='1';
 let range=1;
 let celnum;
 let beatTemplate = new Nexus.Sequencer('#template', {
@@ -121,3 +121,4 @@ function AddNode(value){
     $("#result")[0].appendChild(MakeUpNote(value))
 }
 CleanResult();
+AddNode('等待生成。。。')

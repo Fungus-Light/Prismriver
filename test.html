@@ -1,0 +1,22 @@
+<body>
+    <button onclick="play()">play</button>
+</body>
+
+<script src="tonejs/Tone.js"></script>
+<script>
+
+    var synth = new Tone.Synth().toMaster()
+
+    let track = ['C5', 'D5', 'E5', 'F5', 'G5', 'A5', 'B5', ' ']
+
+    function play() {
+        var seq = new Tone.Sequence(function (time,note) {
+            console.log(note);
+            synth.triggerAttackRelease(note, time);
+        }, track, "4n")
+
+        Tone.Transport.start('+0.2');
+        seq.start();
+    }
+
+</script>

@@ -1,4 +1,6 @@
 let templateValue=new Array(4);
+
+let isMusicOk=false;
 let section_num=1;
 let unit_time=4;
 let tempo=128;
@@ -104,6 +106,19 @@ $("#btn_reload").click(function(e){
 $("#btn_generate").click(function(e){
     e.preventDefault();
     Generator();
+})
+
+$("#btn_player").click(function (e){
+    e.preventDefault();
+    if(isMusicOk==false){
+        alertify.alert('Prismriver',"还没有生成音乐");
+    }
+    play(resultArray,unit_time.toString()+'n',tempo);
+})
+
+$("#btn_stop").click(function(e){
+    e.preventDefault();
+    PlayerStop()
 })
 
 function CleanResult(){

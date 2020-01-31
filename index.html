@@ -23,7 +23,7 @@
                 <a href="#" class="brand-logo center">Prismriver</a>
                 <ul id="nav-mobile" class="right">
                     <li><a class="dropdown-trigger" href="#!" data-target="mod-select">功能选择</a></li>
-                    <li><a href="#!">帮助</a></li>
+                    <!-- <li><a href="#!">帮助</a></li> -->
                     <li><a href="https://github.com/Fungus-Light/Prismriver">源代码</a></li>
                 </ul>
             </div>
@@ -102,7 +102,7 @@
 
                     <div class="col s12">
                         <br>
-                        <label>结果(默认C5为中央C，默认全部为C调，▂表示休止符)</label>
+                        <label>结果(默认C4，默认全部为C调，▂表示休止符)</label>
                         <br>
                         <div id="result">
                             
@@ -116,7 +116,8 @@
                         <br>
                         <br>
                         <a id="btn_generate" class="waves-effect waves-light blue btn">生成</a>
-                        <a class="waves-effect waves-light pink btn">播放</a>
+                        <a id="btn_player" class="waves-effect waves-light pink btn">播放</a>
+                        <a id="btn_stop" class="waves-effect waves-light gray btn">停止</a>
                         <a id="btn_reload" class="waves-effect waves-light red btn">重置</a>
                         <a class="waves-effect waves-light green btn">导出</a>
                     </div>
@@ -132,7 +133,9 @@
     <script src="materialize/js/materialize.js"></script>
     <script src="materialize/jquery/jquery.js"></script>
     <script> M.AutoInit();</script>
+    <script src="tonejs/Tone.js"></script>
     <script src="src/js/Generator.js"></script>
+    <script src="./src/js/player.js"></script>
     <script src="src/js/logic.js"></script>
 </body>
 

@@ -121,6 +121,11 @@ $("#btn_stop").click(function(e){
     PlayerStop()
 })
 
+$("#btn_export").click(function(e){
+    e.preventDefault();
+    alertify.alert('Prismriver', "施工中，即将到来");
+})
+
 function CleanResult(){
     $("#result").text("");
 }

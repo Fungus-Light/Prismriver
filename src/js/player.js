@@ -7,8 +7,6 @@ let sampler= new Tone.Sampler({
 	"D5" : "./src/sample/D.wav",
 	"G5" : "./src/sample/G.wav",
 }, function(){
-	// //sampler will repitch the closest sample
-	// sampler.triggerAttack("C4")
 })
 sampler.toMaster()
 
